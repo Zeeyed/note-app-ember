@@ -7,6 +7,10 @@ Note App build with Ember.js
     ember install ember-cli-bootstrap-sassy
 - [x] Install sass and bootstrap, add @import "bootstrap" to app.scss and remove app.css
     ember install ember-cli-sass && ember install ember-cli-bootstrap-sassy && echo '@import "bootstrap";' > ./app/styles/app.scss && rm ./app/styles/app.css
-- [x] Usage of `outlet` almost all content from other pages will appear inside this section.
-- [ ] List all the Ember cli options
+- [x] `outlet`: almost all content from other pages will appear inside this section.
+- [x] List all the Ember cli options
     ember g --help
+- [x] `{{#link-to}}`: Block helpers that helps create links.
+⋅⋅* First param: route name
+⋅⋅* Inside the block goes the label
+- [ ] Generate About page `ember g route about`
