@@ -13,4 +13,5 @@ Note App build with Ember.js
 - [x] `{{#link-to}}`: Block helpers that helps create links.
 ⋅⋅* First param: route name
 ⋅⋅* Inside the block goes the label
-- [ ] Generate About page `ember g route about`
+- [x] Generate About page `ember g route about`
+- [x] Use Ember Pods: A way of structuring project by feature, instead of type. 

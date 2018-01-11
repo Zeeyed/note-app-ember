@@ -4,6 +4,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'note-app-ember',
+    podModulePrefix: 'note-app-ember/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
