@@ -20,3 +20,6 @@ Note App build with Ember.js
 - [x] Invite Me button should be inactive when the content in the input box is not a valid email address.
 - [x] Show a response message after clicking on button.
 - [x] Clear input box after sending invitation.
+- [x] Add contact page with a form
+- [x] Send message button should be active if email address is valid and the message in the textarea is greater than 5.
+- [ ] 

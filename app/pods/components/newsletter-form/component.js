@@ -12,9 +12,8 @@ export default Component.extend({
 
   actions: {
     saveInvitation() {
-      alert(`Saving in progress: ${this.get('emailAddress')}`);
       this.set('responseMessage', `Thank you ! We save your email ${this.get('emailAddress')}`);
       this.set('emailAddress', '');
-    }
+    },
   }
 });
