@@ -1,4 +1,4 @@
-# note App Ember
+# Ember Note Application
 Note App build with Ember.js
 - [x] Create first static page with Ember.js
 - [x] Add Material-UI npm package
@@ -14,4 +14,9 @@ Note App build with Ember.js
 ⋅⋅* First param: route name
 ⋅⋅* Inside the block goes the label
 - [x] Generate About page `ember g route about`
-- [x] Use Ember Pods: A way of structuring project by feature, instead of type. 
+- [x] Use Ember Pods: A way of structuring project by feature, instead of type.
+- [x] Make the newsletter form as a new component.  
+- [x] Invite Me button should be inactive when input box is empty.
+- [x] Invite Me button should be inactive when the content in the input box is not a valid email address.
+- [x] Show a response message after clicking on button.
+- [x] Clear input box after sending invitation.
