@@ -1,0 +1,6 @@
+<h1>Emails List</h1>
+<ul class="list-group">
+  {{#each content as |email|}}
+    {{email-list/item content=email deleteAction="deleteItem"}}
+  {{/each}}
+</ul>

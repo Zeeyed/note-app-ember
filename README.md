@@ -23,3 +23,4 @@ Note App build with Ember.js
 - [x] Add contact page with a form
 - [x] Send message button should be active if email address is valid and the message in the textarea is greater than 5.
 - [x] Create Invitation service to persist the emails
+- [ ] Create Email List Component
