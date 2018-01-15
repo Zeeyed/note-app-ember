@@ -10,6 +10,9 @@ export default Ember.Component.extend({
   actions: {
     deleteItem(invitation) {
       this.get('invitations').delete(invitation);
+    },
+    updateItem(email, data) {
+      this.get('invitations').update(email, data);
     }
   }
 });

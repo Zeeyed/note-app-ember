@@ -1,6 +1,10 @@
 <h1>Emails List</h1>
-<ul class="list-group">
+<div class="container-fluid">
   {{#each content as |email|}}
-    {{email-list/item content=email deleteAction="deleteItem"}}
+    {{email-list/item
+      content=email
+      deleteAction="deleteItem"
+      updateAction="updateItem"
+    }}
   {{/each}}
-</ul>
+</div>

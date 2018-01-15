@@ -15,8 +15,13 @@ export default Ember.Service.extend({
     const invitations = this.get('content').pushObject(invitation);
     return invitations;
   },
-
   delete(invitation) {
     return this.get('content').removeObject(invitation);
+  },
+  update(email, data) {
+    const invitation = this.get('content').findBy('email', email);
+    if(invitation) {
+      invitation.setProperties(data);
+    }
   }
 });
