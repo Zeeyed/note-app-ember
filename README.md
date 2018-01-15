@@ -28,3 +28,4 @@ Note App build with Ember.js
 - [x] Add update button to edit each email
 - [x] Change buttons to save and cancel once we edit email
 - [x] We handle input visibility of edit action using `editMode` prop.
+- [x] Whenever you delete an email, you will get confirmation buttons(yes/no).

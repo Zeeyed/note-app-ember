@@ -21,7 +21,7 @@
     </button>
     {{else}}
       <button
-      {{action 'deleteMe'}}
+      {{action 'deleteMeConfiramtion'}}
       type="button"
       class="btn btn-danger"
     >Delete
@@ -31,6 +31,21 @@
       type="button"
       class="btn btn-primary"
     >Edit
+    </button>
+  {{/if}}
+  {{#if deleteMode}}
+    <p>Are you sure you want to delete</p>
+    <button
+    {{action 'deleteMe'}}
+      type="button"
+      class="btn btn-danger"
+    >Yes
+    </button>
+    <button
+      {{action 'cancelDelete'}}
+      type="button"
+      class="btn btn-primary"
+    >No
     </button>
   {{/if}}
 </div>
