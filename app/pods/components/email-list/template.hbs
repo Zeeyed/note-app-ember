@@ -3,11 +3,13 @@
   	<span class="badge badge-primary badge-pill">{{content.length}}</span>
   </h1>
   {{log content}}
-  {{#each content as |email|}}
-    {{email-list/item
-      content=email
-      deleteAction="deleteItem"
-      updateAction="updateItem"
-    }}
-  {{/each}}
+  <div class="list-group">
+    {{#each content as |email|}}
+      {{email-list/item
+        content=email
+        deleteAction="deleteItem"
+        updateAction="updateItem"
+      }}
+    {{/each}}
+  </div>
 </div>

@@ -1,40 +1,27 @@
-<div class="col-md-7">
+<div class="col-md-10">
   {{#if editMode}}
     {{input value=email autofocus=true}}
   {{else}}
-    {{content.email}}
+    {{#link-to
+      'emails.detail' content.email
+      class="list-group-item list-group-item-action flex-column align-items-start"
+    }}
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{content.name}}</h5>
+      <small>
+        <button
+          {{action 'deleteMeConfiramtion'}}
+          type="button"
+          class="close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+      </small>
+    </div>
+    <p class="mb-1">{{content.email}}</p>
+    {{/link-to}}
   {{/if}}
 </div>
 <div class="col-md-4">
-  {{#if editMode}}
-    <button
-    {{action 'cancel'}}
-      type="button"
-      class="btn btn-danger"
-    >Cancel
-    </button>
-    <button
-      {{action 'save'}}
-      type="button"
-      class="btn btn-primary"
-    >Save
-    </button>
-    {{else}}
-      <button
-      {{action 'deleteMeConfiramtion'}}
-      type="button"
-      class="btn btn-danger"
-    >Delete
-    </button>
-    {{!-- {{action 'editMe'}} --}}
-    {{#link-to
-      'emails.detail' content.email
-      type="button"
-      class="btn btn-primary"
-    }}
-      Edit
-    {{/link-to}}
-  {{/if}}
   {{#if deleteMode}}
     <p>Are you sure you want to delete</p>
     <button
