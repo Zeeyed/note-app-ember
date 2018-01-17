@@ -1,5 +1,8 @@
 <div class="col-lg-6">
-  <h1>Emails List</h1>
+  <h1>Emails List
+  	<span class="badge badge-primary badge-pill">{{content.length}}</span>
+  </h1>
+  {{log content}}
   {{#each content as |email|}}
     {{email-list/item
       content=email
