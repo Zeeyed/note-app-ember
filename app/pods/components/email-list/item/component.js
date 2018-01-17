@@ -9,10 +9,6 @@ export default Ember.Component.extend({
   email: '',
 
   actions: {
-    // cancel() {
-    //   this.set('editMode', false);
-    //   this.set('email', '');
-    // },
     cancelDelete() {
       this.set('deleteMode', false)
     },

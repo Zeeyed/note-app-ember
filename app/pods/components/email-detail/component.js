@@ -16,12 +16,12 @@ export default Ember.Component.extend({
   }),
 
   actions: {
-    cancel() {
-      
-    },
     save() {
 		this.get('invitations').update(this.get('email'), this.get('proxy'));
 		this.sendAction('updatedAction');
-    }
+	},
+	cancel() {
+		this.sendAction('updatedAction');
+	}
   }
 });
