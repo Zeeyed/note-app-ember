@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['row'],
   deleteAction: null,
   updateAction: null,
   content: null,
@@ -10,17 +9,17 @@ export default Ember.Component.extend({
   email: '',
 
   actions: {
-    cancel() {
-      this.set('editMode', false);
-      this.set('email', '');
-    },
+    // cancel() {
+    //   this.set('editMode', false);
+    //   this.set('email', '');
+    // },
     cancelDelete() {
       this.set('deleteMode', false)
     },
-    save() {
-      this.set('editMode', false),
-      this.sendAction('updateAction', this.get('content.email'), this.getProperties('email'));
-    },
+    // save() {
+    //   this.set('editMode', false),
+    //   this.sendAction('updateAction', this.get('content.email'), this.getProperties('email'));
+    // },
     deleteMe() {
       this.sendAction('deleteAction', this.get('content'));
       this.set('deleteMode', false);
@@ -28,10 +27,10 @@ export default Ember.Component.extend({
     deleteMeConfiramtion() {
       this.set('deleteMode', true);
     },
-    editMe() {
-      this.set('editMode', true);
-      this.set('deleteMode', false);
-      this.set('email', this.get('content.email'));
-    }
+    // editMe() {
+    //   this.set('editMode', true);
+    //   this.set('deleteMode', false);
+    //   this.set('email', this.get('content.email'));
+    // }
   }
 });

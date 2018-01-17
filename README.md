@@ -29,3 +29,6 @@ Note App build with Ember.js
 - [x] Change buttons to save and cancel once we edit email
 - [x] We handle input visibility of edit action using `editMode` prop.
 - [x] Whenever you delete an email, you will get confirmation buttons(yes/no).
+- [x] Click on edit, shows a details section (email-detail component)
+- [x] Move the details to the right
+- [ ] Add name and company property to model

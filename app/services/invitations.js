@@ -1,19 +1,19 @@
 import Ember from 'ember';
 import { computed } from '@ember/object';
 
-const { inject: { service } } = Ember;
+import InvitationModel from 'note-app-ember/models/invitation';
 
 export default Ember.Service.extend({
-  
-  invitations: service(),
 
   content: computed(function() {
-    return [];
+    return [
+      InvitationModel.create({ email: 'some@me.io'}),
+      InvitationModel.create({ email: 'some2@me.io'})
+    ];
   }),
 
   save(invitation) {
-    const invitations = this.get('content').pushObject(invitation);
-    return invitations;
+    return  this.get('content').pushObject(invitation);
   },
   delete(invitation) {
     return this.get('content').removeObject(invitation);

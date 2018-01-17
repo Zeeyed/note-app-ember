@@ -1,0 +1,41 @@
+{{yield}}
+<h2>Email Detail Component</h2>
+  {{#if content}}
+    <form>
+		<div class="form-group">
+			<label for="formGroupExampleInput">Email</label>
+			{{input
+				class="form-control"
+				value=proxy.email
+				autofocus=true
+			}}
+		</div>
+		<div class="form-group">
+			<label for="formGroupExampleInput2">Name</label>
+			{{input
+				class="form-control"
+				value=proxy.name
+				autofocus=true
+        	}}
+		</div>
+		<div class="form-group">
+			<label for="formGroupExampleInput2">Company</label>
+			{{input
+				class="form-control"
+				value=proxy.company
+				autofocus=true
+        	}}
+		</div>
+		<div class="form-group">
+			<button
+				{{action 'save'}}
+				type="button"
+				class="btn btn-primary"
+			>Save
+			</button>
+		</div>
+  	</form>
+  {{else}}
+    <p>No details found</p>
+  {{/if}}
+    

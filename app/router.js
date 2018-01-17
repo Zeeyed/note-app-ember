@@ -9,7 +9,9 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('about');
   this.route('contact');
-  this.route('emails');
+  this.route('emails', function() {
+    this.route('detail', { path: '/:email'});
+  });
 });
 
 export default Router;

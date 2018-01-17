@@ -1,11 +1,11 @@
-<div class="col-md-4">
+<div class="col-md-7">
   {{#if editMode}}
     {{input value=email autofocus=true}}
   {{else}}
     {{content.email}}
   {{/if}}
 </div>
-<div class="col-md-4 col-md-offset-4">
+<div class="col-md-4">
   {{#if editMode}}
     <button
     {{action 'cancel'}}
@@ -26,12 +26,14 @@
       class="btn btn-danger"
     >Delete
     </button>
-    <button
-      {{action 'editMe'}}
+    {{!-- {{action 'editMe'}} --}}
+    {{#link-to
+      'emails.detail' content.email
       type="button"
       class="btn btn-primary"
-    >Edit
-    </button>
+    }}
+      Edit
+    {{/link-to}}
   {{/if}}
   {{#if deleteMode}}
     <p>Are you sure you want to delete</p>
