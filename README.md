@@ -31,4 +31,7 @@ Note App build with Ember.js
 - [x] Whenever you delete an email, you will get confirmation buttons(yes/no).
 - [x] Click on edit, shows a details section (email-detail component)
 - [x] Move the details to the right
-- [ ] Add name and company property to model
+- [x] Add name and company property to model
+- [x] Email detail get a copy (proxy) to avoid binding directly the content
+- [x] Add email filter component to filter emails by email(regex), email and name (dropdown list)
+- [x] Add babel plugin object spread operator 

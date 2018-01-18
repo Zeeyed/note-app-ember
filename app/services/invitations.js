@@ -23,5 +23,10 @@ export default Ember.Service.extend({
     if(invitation) {
       invitation.setProperties(data);
     }
+  },
+  filterBy(email) {
+    // console.log(this.get('content').findBy('email', email));
+    
+    // return this.get('content').findBy('email', email).setProperties({ email: email});
   }
 });
