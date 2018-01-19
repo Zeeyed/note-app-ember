@@ -33,5 +33,7 @@ Note App build with Ember.js
 - [x] Move the details to the right
 - [x] Add name and company property to model
 - [x] Email detail get a copy (proxy) to avoid binding directly the content
-- [x] Add email filter component to filter emails by email(regex), email and name (dropdown list)
-- [x] Add babel plugin object spread operator 
+- [x] Add email filter component to filter invitations by email(regex)
+- [x] Add babel plugin object spread operator
+- [x] Add name filter component to filter invitations by company name (`email || name`) (dropdown list)
+- [x] Add email toggle filter component to filter invitations by bothe name and email (`email && name`)
