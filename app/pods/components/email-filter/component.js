@@ -12,16 +12,7 @@ export default Ember.Component.extend({
 
     actions: {
         handleFilterEntry(value) {
-            this.sendAction('filterAction', "email", value);
-            // this.set(this.get('invitations.content'), this.get('content'));
-            
-            // this.get("invitations").filterBy(value);
-            // console.log('this.get("invitations")', this.get("invitations"));
-            
-            // this.set(this.get('content.'))
-            // console.log('hey filter ...', this.get('invitations').update(value, this.get('proxy')));
-            // console.log(this.get('content'));
-            
+            this.sendAction('filterAction', 'email', value);
         }
     }
 });

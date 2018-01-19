@@ -1,0 +1,10 @@
+{{yield}}
+<div class="form-group">
+  <label for="sel1">Select list:</label>
+    <select class="form-control" onchange={{action 'onChangeName'}}>
+        <option selected>Choose...</option>
+        {{#each content as |content|}}
+            <option value="{{content.name}}">{{content.name}}</option>
+        {{/each}}
+    </select>
+</div>
