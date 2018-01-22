@@ -4,6 +4,7 @@
   </h1>
   {{email-filter filterAction='filterItem'}}
   {{name-filter filterAction='filterItem'}}
+  {{email-toggle-filter filterAction='useBoth'}}
   <div class="list-group">
     {{#each filteredContent as |email|}}
       {{email-list/item

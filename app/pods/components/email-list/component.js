@@ -8,18 +8,25 @@ export default Ember.Component.extend({
 
 	content: computed.reads('invitations.content'),
 	filter: null,
-	filteredContent: computed('filter', 'content', function() {
+	matchAny: false,
+	filteredContent: computed('filter', 'content', 'matchAny', function() {
 		const filter = this.get('filter');
-
+		const matchAny = this.get('matchAny');
 		if(filter === null) {
 			return this.get('content');
 		}
 		const filterProps = Object.keys(filter);
 		return this.get('content').filter(function(invitation) {
-			let result = true;
+			let result = !matchAny;
 			filterProps.forEach(function(filterProp) {
-				if(result && invitation[filterProp] !== filter[filterProp]) {
-					result = false;
+				if(matchAny) {
+					if(!result && invitation[filterProp] === filter[filterProp]) {
+						result = true;
+					}
+				} else {
+					if(result && invitation[filterProp] !== filter[filterProp]) {
+						result = false;
+					}
 				}
 			});
 			return result;
@@ -34,9 +41,14 @@ export default Ember.Component.extend({
       this.get('invitations').update(email, data);
     },
     filterItem(filterName, value) {
-		const filterObj = { ...this.get('filter') };
-		filterObj[filterName] = value;
-		this.set('filter', filterObj);
-    }
+			const filterObj = { ...this.get('filter') };
+			filterObj[filterName] = value;
+			this.set('filter', filterObj);
+		},
+		useBoth(e, value) {			
+			let filterMatchAny = this.get('filterMatchAny');
+			filterMatchAny = value;
+			this.set('matchAny', filterMatchAny)
+		}
   }
 });
