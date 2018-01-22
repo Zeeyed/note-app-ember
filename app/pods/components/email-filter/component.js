@@ -9,6 +9,9 @@ export default Ember.Component.extend({
     content: computed('invitations.content.[]', 'email', function() {
         return this.get('invitations.content').findBy('email', this.get('email'));
     }),
+    proxy: computed('content', function() {
+        return this.get('invitations.content').getProperties('email', 'name', 'company');
+    }),
 
     actions: {
         handleFilterEntry(value) {

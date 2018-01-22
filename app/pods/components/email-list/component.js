@@ -32,6 +32,9 @@ export default Ember.Component.extend({
 			return result;
 		});
 	}),
+	resetContent: computed('', function() {
+
+	}),
 
   actions: {
     deleteItem(invitation) {
@@ -41,14 +44,21 @@ export default Ember.Component.extend({
       this.get('invitations').update(email, data);
     },
     filterItem(filterName, value) {
-			const filterObj = { ...this.get('filter') };
-			filterObj[filterName] = value;
-			this.set('filter', filterObj);
-		},
-		useBoth(e, value) {			
-			let filterMatchAny = this.get('filterMatchAny');
-			filterMatchAny = value;
-			this.set('matchAny', filterMatchAny)
-		}
+		const filterObj = { ...this.get('filter') };
+		filterObj[filterName] = value;
+		this.set('filter', filterObj);
+	},
+	useBoth(e, value) {
+		let filterMatchAny = this.get('filterMatchAny');
+		filterMatchAny = value;
+		this.set('matchAny', filterMatchAny)
+	},
+	resetFilter() {
+		console.log('this', this.get('filter.email'));
+		let clone = this.get('filter.email');
+		clone = null;
+		this.set('filter.email', '')
+		// console.log('this', this.get('content'));
+	}
   }
 });

@@ -12,16 +12,16 @@ export default Ember.Component.extend({
   }),
 
   proxy: computed('content', function() {
-	return this.get('content').getProperties('email', 'name', 'company');
+    return this.get('content').getProperties('email', 'name', 'company');
   }),
 
   actions: {
     save() {
-		this.get('invitations').update(this.get('email'), this.get('proxy'));
-		this.sendAction('updatedAction');
-	},
-	cancel() {
-		this.sendAction('updatedAction');
-	}
+      this.get('invitations').update(this.get('email'), this.get('proxy'));
+      this.sendAction('updatedAction');
+    },
+    cancel() {
+      this.sendAction('updatedAction');
+    }
   }
 });
