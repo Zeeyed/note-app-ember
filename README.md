@@ -37,3 +37,4 @@ Note App build with Ember.js
 - [x] Add babel plugin object spread operator
 - [x] Add name filter component to filter invitations by company name (`email || name`) (dropdown list)
 - [x] Add email toggle filter component to filter invitations by bothe name and email (`email && name`)
+- [ ] Add reset button for the filters
