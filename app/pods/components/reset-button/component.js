@@ -10,10 +10,10 @@ export default Ember.Component.extend({
 
     actions: {
         resetItems() {
-            console.log('hahah', this.get('content'));
+            this.set('filter', null);
+            console.log('heyeeyyy', this.get('filter.displayValue'));
             
-            // this.set('email', 'ssss')
-            this.sendAction('resetAction')
+            this.sendAction('resetAction', 'filter', this.get('filter.displayValue'))
         }
     }
 });

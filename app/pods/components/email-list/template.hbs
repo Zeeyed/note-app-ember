@@ -2,10 +2,10 @@
   <h1>Emails List
   	<span class="badge badge-primary badge-pill">{{content.length}}</span>
   </h1>
-  {{email-filter resetFilter='doFilter' filterAction='filterItem'}}
-  {{name-filter filterAction='filterItem'}}
-  {{email-toggle-filter filterAction='useBoth'}}
-  {{reset-button resetAction='resetFilter'}}
+  {{email-filter filterAction='filterItem' refreshList='refreshList'}}
+  {{!-- {{name-filter filterAction='filterItem'}} --}}
+  {{!-- {{email-toggle-filter filterAction='useBoth'}} --}}
+  {{!-- {{reset-button filter=filter resetAction='resetFilter'}} --}}
   <div class="list-group">
     {{#each filteredContent as |email|}}
       {{email-list/item
