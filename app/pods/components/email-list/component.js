@@ -6,18 +6,54 @@ const { inject: { service } } = Ember;
 export default Ember.Component.extend({
 	invitations: service(),
 	filter: null,
-	filteredContent: computed('filteredContent', function() {
-		return this.get('invitations.content');
+	matchAny: false,
+	filteredContent: computed('filter', 'invitations.content', 'matchAny', function() {
+		const filter = this.get('filter');
+		
+		const matchAny = this.get('matchAny');
+		if(filter === null) {
+			return this.get('invitations.content');
+		}
+		const filterProps = Object.keys(filter);
+		return this.get('invitations.content').filter(function(invitation) {
+			let result = !matchAny;
+			filterProps.forEach(function(filterProp) {
+				if(matchAny) {
+					if(!result && invitation[filterProp] === filter[filterProp]) {
+						result = true;
+					}
+				} else {
+					if(result && invitation[filterProp] !== filter[filterProp]) {
+						result = false;
+					}
+				}
+			});
+			return result;
+		});
 	}),
-  actions: {
-		refreshList(value) {
-			this.set('filteredContent', value);
+	actions: {
+		refreshList(filterObj) {
+			this.set('filter', filterObj);
 		},
-    deleteItem(invitation) {
-      this.get('invitations').delete(invitation);
-    },
-    updateItem(email, data) {
-      this.get('invitations').update(email, data);
-    }
+		updateCheckbox(filterMatchAny) {
+			this.set('matchAny', filterMatchAny);
+		},
+		resetFilter(value) {
+			this.set('filter', value);
+		},
+		deleteItem(invitation) {
+			this.get('invitations').delete(invitation);
+		},
+		updateItem(email, data) {
+			this.get('invitations').update(email, data);
+		},
+		reset(value) {
+			this.set('displayValue', null);
+			this.set('selectedOption', '');
+			this.set('filter', value);
+		},
+		checkBoth(value) {
+			this.set('matchAny', value);
+		}
   }
 });
