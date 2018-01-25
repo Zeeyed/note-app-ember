@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('email-toggle-filter', 'Integration | Component | email toggle filter', {
+moduleForComponent('reset-button', 'Integration | Component | reset button', {
   integration: true
 });
 
@@ -9,15 +9,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{email-toggle-filter}}`);
+  this.render(hbs`{{filter-reset-button}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#email-toggle-filter}}
+    {{#filter-reset-button}}
       template block text
-    {{/email-toggle-filter}}
+    {{/filter-reset-button}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
