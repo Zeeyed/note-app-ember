@@ -1,0 +1,22 @@
+<div class="form-group">
+    {{#if isInput}}
+        <h3>Filter</h3>
+        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Email</label>
+        {{input
+            value=value
+            key-up=(action 'filterItem' 'email')
+            type="text"
+            class="form-control"
+        }}
+    {{/if}}
+    {{#if isSelect}}
+        <label class="my-1 mr-2">Select list:</label>
+        <select class="form-control" onchange={{action 'filterItem' 'name'}}>
+            <option selected={{isBlankSelected}}> -- Choose... -- </option>
+            {{#each options as |option|}}
+                <option value={{option.name}} selected={{eq selectedOption option.name}}>{{option.name}}</option>
+            {{/each}}
+        </select>
+    {{/if}}
+    <br><br>
+</div>

@@ -2,13 +2,20 @@
   <h1>Emails List
   	<span class="badge badge-primary badge-pill">{{content.length}}</span>
   </h1>
-  {{filter-inputs
-    displayValue=displayValue
-    selectedOption=selectedOption
-    isBtnVisible=isBtnVisible
-    updateCheckbox='updateCheckbox'
-    refreshList='refreshList'
-    resetFilter='resetFilter'
+  {{m-filter
+    filter=filter
+    type="input"
+    name="email"
+    value=emailInputFilterValue
+    onChangeAction="updateFilter"
+  }}
+  {{m-filter
+    filter=filter
+    type="select"
+    options=content
+    name="name"
+    selectedOption=nameInputFilterValue
+    onChangeAction="updateFilter"
   }}
   {{filter-check-any checkBoth='checkBoth'}}
   {{filter-reset-button

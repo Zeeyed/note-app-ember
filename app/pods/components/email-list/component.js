@@ -7,6 +7,7 @@ export default Ember.Component.extend({
 	invitations: service(),
 	filter: null,
 	matchAny: false,
+	content: computed.reads('invitations.content'),
 	filteredContent: computed('filter', 'invitations.content', 'matchAny', function() {
 		const filter = this.get('filter');
 		
@@ -32,7 +33,7 @@ export default Ember.Component.extend({
 		});
 	}),
 	actions: {
-		refreshList(filterObj) {
+		updateFilter(filterObj) {
 			this.set('filter', filterObj);
 		},
 		updateCheckbox(filterMatchAny) {
@@ -48,8 +49,8 @@ export default Ember.Component.extend({
 			this.get('invitations').update(email, data);
 		},
 		reset(value) {
-			this.set('displayValue', null);
-			this.set('selectedOption', '');
+			this.set('emailInputFilterValue', '');
+			this.set('nameInputFilterValue', '');
 			this.set('filter', value);
 		},
 		checkBoth(value) {
