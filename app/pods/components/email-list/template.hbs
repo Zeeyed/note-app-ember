@@ -3,24 +3,27 @@
   	<span class="badge badge-primary badge-pill">{{content.length}}</span>
   </h1>
   {{m-filter
-    filter=filter
     type="input"
     name="email"
     value=emailInputFilterValue
     onChangeAction="updateFilter"
   }}
   {{m-filter
-    filter=filter
     type="select"
-    options=content
+    options=invitationNamesList
     name="name"
     selectedOption=nameInputFilterValue
     onChangeAction="updateFilter"
   }}
+  {{m-filter
+    type="select"
+    options=invitationCompaniesList
+    name="company"
+    selectedOption=companyInputFilterValue
+    onChangeAction="updateFilter"
+  }}
   {{filter-check-any checkBoth='checkBoth'}}
-  {{filter-reset-button
-    reset='reset'
-    activateBtn='activateBtn'}}
+  {{filter-reset-button reset='reset'}}
   <div class="list-group">
     {{#each filteredContent as |email|}}
       {{email-list/item

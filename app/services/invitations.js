@@ -7,8 +7,8 @@ export default Ember.Service.extend({
 
   content: computed(function() {
     return [
-      InvitationModel.create({ id: 1, email: 'some@me.io', name: 'somebody'}),
-      InvitationModel.create({ id: 2, email: 'some2@me.io', name: 'somebody else'})
+      InvitationModel.create({ id: 1, email: 'some@me.io', name: 'somebody', company: 'shore'}),
+      InvitationModel.create({ id: 2, email: 'some2@me.io', name: 'somebody else', company: 'absence'})
     ];
   }),
 
